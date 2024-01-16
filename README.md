@@ -15,12 +15,12 @@ Implementations :
   - Strategy
   - Template Method
   - Visitor
-- Creational
+- [Creational](Creational)
   - Abstract Fabric
   - Builder
   - Fabric Method
   - Prototype
-  - Singleton
+  - [Singleton](Creational/Singleton)
 - Structural
   - Adaptator
   - Bridge
