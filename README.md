@@ -4,7 +4,7 @@ Design patterns mostly implemented in C++ and Java for learning purpose.
 
 ## About
 
-Most of the definitions were taken from *Design Patterns: Elements of Reusable Object-Oriented Software* book written in 1994[^ 2] by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (also known as the *gang-of-four*[^ 3]). 
+Most of the definitions were taken from *Design Patterns: Elements of Reusable Object-Oriented Software* book written in 1994[^ 1] by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (also known as the *gang-of-four*) 
 
 ## Purpose
 
@@ -14,7 +14,7 @@ The purpose of this repository is to provide a better understanding of these des
 
 ### Design patterns
 
-A design pattern is a reusable solution to a commonly occuring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^1]
+A design pattern is a reusable solution to a commonly occurring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^2]
 
 ### Behavioural
 
@@ -57,6 +57,6 @@ Structural patterns focus on the composition of classes and objects to  create l
   - Fly-Weight
   - Proxy
 
-[^1]: https://en.wikipedia.org/wiki/Software_design_pattern
-[^2]: https://en.wikipedia.org/wiki/Design_Patterns
+[^1]: https://en.wikipedia.org/wiki/Design_Patterns
+[^2]: https://en.wikipedia.org/wiki/Software_design_pattern
 
