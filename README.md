@@ -46,7 +46,7 @@ Structural patterns focus on the composition of classes and objects to  create l
   - Abstract Fabric
   - [Builder](Creational/Builder)
   - Fabric Method
-  - Prototype
+  - [Prototype](Creational/Prototype)
   - [Singleton](Creational/Singleton)
 - Structural
   - Adaptator
