@@ -56,8 +56,6 @@ class WebBtn : public Button {
 
 class WindowsDialog : public Dialog {
 	public:
-		WindowsDialog() {}
-		~WindowsDialog() {};
 		std::shared_ptr<Button> createBtn() const override {
 			return std::make_shared<WindowsBtn>();
 		}
