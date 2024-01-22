@@ -8,6 +8,7 @@
 // Button interface
 class Button {
 	public:
+		virtual ~Button() {}
 		virtual void paint() const = 0;
 };
 
@@ -32,6 +33,7 @@ class LinuxBtn : public Button {
 // CheckBox interface
 class CheckBox {
 	public:
+		virtual ~CheckBox() {}
 		virtual void paint() const = 0;
 };
 
@@ -56,37 +58,38 @@ class LinuxCheckBox : public CheckBox {
 // AbstractFactory interface
 class GUIFactory {
 	public:
-		virtual std::shared_ptr<Button> createBtn() const = 0;
-		virtual std::shared_ptr<CheckBox> createCheckBox() const = 0;
+		virtual ~GUIFactory() {}
+		virtual Button *createBtn() const = 0;
+		virtual CheckBox *createCheckBox() const = 0;
 };
 
 class WindowsFactory : public GUIFactory {
 	public:
-		std::shared_ptr<Button> createBtn() const override {
-			return std::make_shared<WindowsBtn>();
+		Button *createBtn() const override {
+			return new WindowsBtn();
 		}
-		std::shared_ptr<CheckBox> createCheckBox() const override {
-			return std::make_shared<WindowsCheckBox>();
+		CheckBox *createCheckBox() const override {
+			return new WindowsCheckBox();
 		}
 };
 
 class MacOSFactory : public GUIFactory {
 	public:
-		std::shared_ptr<Button> createBtn() const override {
-			return std::make_shared<MacOSBtn>();
+		Button *createBtn() const override {
+			return new MacOSBtn();
 		}
-		std::shared_ptr<CheckBox> createCheckBox() const override {
-			return std::make_shared<MacOSCheckBox>();
+		CheckBox *createCheckBox() const override {
+			return new MacOSCheckBox();
 		}
 };
 
 class LinuxFactory : public GUIFactory {
 	public:
-		std::shared_ptr<Button> createBtn() const override {
-			return std::make_shared<LinuxBtn>();
+		Button *createBtn() const override {
+			return new LinuxBtn();
 		}
-		std::shared_ptr<CheckBox> createCheckBox() const override {
-			return std::make_shared<LinuxCheckBox>();
+		CheckBox *createCheckBox() const override {
+			return new LinuxCheckBox();
 		}
 };
 
@@ -111,7 +114,7 @@ int main() {
 	std::srand(std::time(nullptr));
 	
 	// Factory pointer
-	std::shared_ptr<GUIFactory> factory;
+	GUIFactory *factory;
 
 	// Getting Random Config
 	confs config = get_config();
@@ -119,13 +122,13 @@ int main() {
 	// Creating Random Factory
 	switch(config) {
 		case Windows:
-			factory = std::make_shared<WindowsFactory>();
+			factory = new WindowsFactory();
 			break;
 		case Linux:
-			factory = std::make_shared<LinuxFactory>();
+			factory = new LinuxFactory();
 			break;
 		case MacOS:
-			factory = std::make_shared<MacOSFactory>();
+			factory = new MacOSFactory();
 			break;
 		default:
 			throw std::invalid_argument("configuration does not exists.");
@@ -134,12 +137,17 @@ int main() {
 	
 	
 	// Creating Factory Elements
-	std::shared_ptr<Button> btn = factory->createBtn();
-	std::shared_ptr<CheckBox> check = factory->createCheckBox();
+	Button *btn = factory->createBtn();
+	CheckBox *check = factory->createCheckBox();
 	
 	// Calling Respective Actions
 	btn->paint();
 	check->paint();
+	
+	// Free memory
+	delete btn;
+	delete check;
+	delete factory;
 
 	return 0;
 }
