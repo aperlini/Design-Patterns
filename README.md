@@ -43,7 +43,7 @@ Structural patterns focus on the composition of classes and objects to  create l
   - Template Method
   - Visitor
 - [Creational](Creational)
-  - Abstract Fabric
+  - [Abstract Factory](Creational/Abstract-Factory)
   - [Builder](Creational/Builder)
   - [Factory Method](Creational/Factory-Method)
   - [Prototype](Creational/Prototype)
