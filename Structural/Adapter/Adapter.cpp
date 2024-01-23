@@ -77,7 +77,7 @@ int main() {
 	// Adapter for our rectangle
 	Square *adapter = new RectAdapter(rectangle);
 
-	// Modifying rectangle using Square methods
+	// Applying Square methods on our rectangle
 	adapter->set_side(12);
 	std::cout << "Printing Area Using Adapter: " << std::endl;
 	adapter->print_area();
