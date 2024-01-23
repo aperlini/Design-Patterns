@@ -35,10 +35,10 @@ Structural patterns focus on the composition of classes and objects to  create l
 
 ## Implementations
 
-- Behavioral
+- [Behavioral](Behavioral)
   - Chain of responsibility
   - Command
-  - Iterator
+  - [Iterator](Behavioral/Iterator)
   - Mediator
   - Memento
   - Observer
