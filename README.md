@@ -48,8 +48,8 @@ Structural patterns focus on the composition of classes and objects to  create l
   - [Factory Method](Creational/Factory-Method)
   - [Prototype](Creational/Prototype)
   - [Singleton](Creational/Singleton)
-- Structural
-  - Adaptator
+- [Structural](Structural)
+  - [Adapter](Structural/Adapter)
   - Bridge
   - Composite
   - Decorator
