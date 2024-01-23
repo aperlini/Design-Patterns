@@ -51,7 +51,7 @@ Structural patterns focus on the composition of classes and objects to  create l
 - [Structural](Structural)
   - [Adapter](Structural/Adapter)
   - [Bridge](Structural/Bridge)
-  - Composite
+  - [Composite](Structural/Composite)
   - Decorator
   - Facade
   - Fly-Weight
