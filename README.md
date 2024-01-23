@@ -6,6 +6,10 @@ Design patterns mostly implemented in C++ and Java for learning purpose.
 
 Most of the definitions were taken from *Design Patterns: Elements of Reusable Object-Oriented Software* book written in 1994[^ 1] by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (also known as the *gang-of-four*) 
 
+### Inspiration
+
+Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/) or [Refactoring Guru](https://refactoring.guru)
+
 ## Purpose
 
 The purpose of this repository is to provide a better understanding of these design patterns by implementing them using different programming language.
