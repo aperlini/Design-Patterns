@@ -80,7 +80,7 @@ int main() {
 	Switch *ls = new Switch(on);
 
 	// then Switch is toggled off
-	on->toggle(ls);	
+	ls->toggle();	
 
 	
 	// Overriding current state
@@ -88,7 +88,7 @@ int main() {
 	ls->set_state(off);
 
 	// and turning switch back on
-	off->toggle(ls);
+	ls->toggle();
 
 	delete ls;
 	
