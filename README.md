@@ -42,7 +42,7 @@ Structural patterns focus on the composition of classes and objects to  create l
   - Mediator
   - Memento
   - Observer
-  - State
+  - [State](Behavioral/State)
   - [Strategy](Behavioral/Strategy)
   - Template Method
   - Visitor
