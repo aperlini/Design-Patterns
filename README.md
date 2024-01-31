@@ -40,7 +40,7 @@ Structural patterns focus on the composition of classes and objects to  create l
   - [Command](Behavioral/Command)
   - [Iterator](Behavioral/Iterator)
   - [Mediator](Behavioral/Mediator)
-  - Memento
+  - [Memento](Behavioral/Memento)
   - Observer
   - [State](Behavioral/State)
   - [Strategy](Behavioral/Strategy)
