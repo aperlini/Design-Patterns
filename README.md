@@ -8,7 +8,7 @@ Most of the definitions were taken from *Design Patterns: Elements of Reusable O
 
 ### Inspiration
 
-Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/) or [Refactoring Guru](https://refactoring.guru)
+Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/), [Refactoring Guru](https://refactoring.guru) or [digital ocean](https://www.digitalocean.com)
 
 ## Purpose
 
@@ -20,7 +20,7 @@ The purpose of this repository is to provide a better understanding of these des
 
 A design pattern is a reusable solution to a commonly occurring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^2]
 
-### Behavioural
+### Behavioral
 
 Behavioral patterns involve algorithms and the delegation of  responsibilities between objects, emphasizing communication patterns.  They shift the focus from control flow to concentrate on how objects are interconnected.
 
@@ -45,7 +45,7 @@ Structural patterns focus on the composition of classes and objects to  create l
   - [State](Behavioral/State)
   - [Strategy](Behavioral/Strategy)
   - [Template Method](Behavioral/Template-Method)
-  - Visitor
+  - [Visitor](Behavioral/Visitor)
 - [Creational](Creational)
   - [Abstract Factory](Creational/Abstract-Factory)
   - [Builder](Creational/Builder)
