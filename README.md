@@ -58,8 +58,8 @@ A design pattern is a reusable solution to a commonly occurring problem within a
   - [Composite](Structural/Composite)
   - Decorator
   - Facade
-  - Fly-Weight
-  - Proxy
+  - [Fly-Weight](Structural/Fly-Weight)
+  - [Proxy](Structural/Proxy)
 
 [^1]: https://en.wikipedia.org/wiki/Design_Patterns
 [^2]: https://en.wikipedia.org/wiki/Software_design_pattern
