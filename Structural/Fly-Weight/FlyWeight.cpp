@@ -97,7 +97,7 @@ Shape* ShapeFactory::get_circle(enum Color color) {
 
 /*
  * Generate random integer
- * based on min, max range
+ * based on min/max range
  * 
  * @params:
  * 	- min range

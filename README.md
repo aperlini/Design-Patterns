@@ -57,7 +57,7 @@ A design pattern is a reusable solution to a commonly occurring problem within a
   - [Bridge](Structural/Bridge)
   - [Composite](Structural/Composite)
   - Decorator
-  - Facade
+  - [Facade](Structural/Facade)
   - [Fly-Weight](Structural/Fly-Weight)
   - [Proxy](Structural/Proxy)
 
