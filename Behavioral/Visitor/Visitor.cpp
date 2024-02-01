@@ -107,7 +107,7 @@ int main() {
 	// Total sum of items in the cart
 	int total = 0;
 	for(const auto& item : items) {
-		// each item takes the cart (visitor)
+		// each item accept a cart (visitor)
 		total += item->accept(cart);
 	}
 	

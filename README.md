@@ -8,7 +8,7 @@ Most of the definitions were taken from *Design Patterns: Elements of Reusable O
 
 ### Inspiration
 
-Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/), [Refactoring Guru](https://refactoring.guru) or [digital ocean](https://www.digitalocean.com)
+Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/), [Refactoring Guru](https://refactoring.guru),  [digital ocean](https://www.digitalocean.com) or [baeldung](https://www.baeldung.com/)
 
 ## Purpose
 
@@ -22,16 +22,16 @@ A design pattern is a reusable solution to a commonly occurring problem within a
 
 ### Behavioral
 
-Behavioral patterns involve algorithms and the delegation of  responsibilities between objects, emphasizing communication patterns.  They shift the focus from control flow to concentrate on how objects are interconnected.
+> Behavioral patterns involve algorithms and the delegation of  responsibilities between objects, emphasizing communication patterns.  They shift the focus from control flow to concentrate on how objects are interconnected.
 
 ### Creational
 
-Creational design patterns abstract the instantiation process, making a system independent of how its objects are created, composed, and represented. These patterns offer mechanisms for object creation that enhance flexibility and facilitate the reuse of existing code.
+> Creational design patterns abstract the instantiation process, making a system independent of how its objects are created, composed, and represented. These patterns offer mechanisms for object creation that enhance flexibility and facilitate the reuse of existing code.
 
 
 ### Structural
 
-Structural patterns focus on the composition of classes and objects to  create larger structures. In structural class patterns, inheritance is  employed to compose interfaces or implementations. These patterns extend objects and classes into larger structures, ensuring flexibility and  efficiency in their composition.
+> Structural patterns focus on the composition of classes and objects to  create larger structures. In structural class patterns, inheritance is  employed to compose interfaces or implementations. These patterns extend objects and classes into larger structures, ensuring flexibility and  efficiency in their composition.
 
 ## Implementations
 
