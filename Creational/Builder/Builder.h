@@ -1,6 +1,12 @@
 #ifndef __BUILDER__H
 #define __BUILDER__H
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! unfinished implementation !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 #include <string>
 
 using namespace std;

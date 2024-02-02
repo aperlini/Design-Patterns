@@ -1,5 +1,11 @@
 #include "SingletonPattern.h"
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! unfinished implementation !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 Singleton *Singleton::instance_ = nullptr;
 	
 Singleton::Singleton(string s) : data(s) {}

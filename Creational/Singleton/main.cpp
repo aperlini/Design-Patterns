@@ -1,6 +1,12 @@
 #include <iostream>
 #include "SingletonPattern.h"
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! unfinished implementation !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 using namespace std;
 
 int main() {

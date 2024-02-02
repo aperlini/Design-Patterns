@@ -1,5 +1,11 @@
 #include "Builder.h"
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!! unfinished implementation !!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 Computer::Computer(int ds, int ram, string brand, bool hdmi) {
 	this->disk_space = ds;
 	this->ram = ram;
