@@ -1,66 +1,74 @@
 # Design Patterns
 
-Design patterns mostly implemented in C++ and Java for learning purpose.
+Mostly implemented in C++ (at the moment) and Java. The aim of this repository is to provide a better understanding of these design patterns by implementing them using different programming language for learning purpose.
 
-## About
+## Design patterns
 
-Most of the definitions were taken from *Design Patterns: Elements of Reusable Object-Oriented Software* book written in 1994[^ 1] by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (also known as the *gang-of-four*) 
-
-### Inspiration
-
-Most of the code is inspired or adapted from existing examples available on [BTechGeeks](https://btechgeeks.com/), [Refactoring Guru](https://refactoring.guru),  [digital ocean](https://www.digitalocean.com) or [baeldung](https://www.baeldung.com/)
-
-## Purpose
-
-The purpose of this repository is to provide a better understanding of these design patterns by implementing them using different programming language.
-
-## Definitions
-
-### Design patterns
-
-A design pattern is a reusable solution to a commonly occurring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^2]
-
-### Behavioral
-
-> Behavioral patterns involve algorithms and the delegation of  responsibilities between objects, emphasizing communication patterns.  They shift the focus from control flow to concentrate on how objects are interconnected.
+A design pattern is a reusable solution to a commonly occurring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^1] 
 
 ### Creational
 
-> Creational design patterns abstract the instantiation process, making a system independent of how its objects are created, composed, and represented. These patterns offer mechanisms for object creation that enhance flexibility and facilitate the reuse of existing code.
+> How to instantiate objects while increasing flexibility and code reuse
 
+- [Abstract Factory](Creational/Abstract-Factory) : an interface for creating a family of objects without specifying their concrete classes
+- [Builder](Creational/Builder) : separate the construction of an object from its representation 
+- [Factory Method](Creational/Factory-Method) : defines an interface for creating objects, subclasses decide which class to instantiate
+- [Prototype](Creational/Prototype) : make new instances by copying existing instances
+- [Singleton](Creational/Singleton) : ensures a class has only one instance and provides a global point of access to it
 
 ### Structural
 
-> Structural patterns focus on the composition of classes and objects to  create larger structures. In structural class patterns, inheritance is  employed to compose interfaces or implementations. These patterns extend objects and classes into larger structures, ensuring flexibility and  efficiency in their composition.
+> How to assemble classes and objects into larger structures
 
-## Implementations
+- [Adapter](Structural/Adapter) : convert an interface of a class into another interface the client expects
+- [Bridge](Structural/Bridge) : decouple abstraction from implementation, so the two can be extended independently
+- [Composite](Structural/Composite) : compose objects into tree structures
+- [Decorator](Structural/Decorator) : attaches additional responsibilities to an object dynamically 
+- [Facade](Structural/Facade) : provide a unified interface to a set of interfaces in a subsystem
+- [Fly-Weight](Structural/Fly-Weight) : one instance of a class provides many "virtual instances" of a similar object
+- [Proxy](Structural/Proxy) : placeholder for another object to control access to it
 
-- [Behavioral](Behavioral)
-  - [Chain of responsibility](Behavioral/Chain-of-Responsibility)
-  - [Command](Behavioral/Command)
-  - [Iterator](Behavioral/Iterator)
-  - [Mediator](Behavioral/Mediator)
-  - [Memento](Behavioral/Memento)
-  - [Observer](Behavioral/Observer)
-  - [State](Behavioral/State)
-  - [Strategy](Behavioral/Strategy)
-  - [Template Method](Behavioral/Template-Method)
-  - [Visitor](Behavioral/Visitor)
-- [Creational](Creational)
-  - [Abstract Factory](Creational/Abstract-Factory)
-  - [Builder](Creational/Builder)
-  - [Factory Method](Creational/Factory-Method)
-  - [Prototype](Creational/Prototype)
-  - [Singleton](Creational/Singleton)
-- [Structural](Structural)
-  - [Adapter](Structural/Adapter)
-  - [Bridge](Structural/Bridge)
-  - [Composite](Structural/Composite)
-  - [Decorator](Structural/Decorator)
-  - [Facade](Structural/Facade)
-  - [Fly-Weight](Structural/Fly-Weight)
-  - [Proxy](Structural/Proxy)
+### Behavioral
 
-[^1]: https://en.wikipedia.org/wiki/Design_Patterns
-[^2]: https://en.wikipedia.org/wiki/Software_design_pattern
+> How classes and objects interact and distribute responsibility
+
+- [Chain of responsibility](Behavioral/Chain-of-Responsibility) : pass a request along the chain until an object handles it
+- [Command](Behavioral/Command) : encapsulates a request as an object
+- [Iterator](Behavioral/Iterator) : provides a way to access elements of an aggregate object sequentially
+- [Mediator](Behavioral/Mediator) : defines an object that encapsulates how a set of objects interact
+- [Memento](Behavioral/Memento) : allows an object to return to one of its previous state
+- [Observer](Behavioral/Observer) : defines one-to-many relationship between a set of objects
+- [State](Behavioral/State) : allows an object to alter its behavior when its internal state changes
+- [Strategy](Behavioral/Strategy) : define a family of algorithms and let subclasses how to implement them
+- [Template Method](Behavioral/Template-Method) : lets subclasses redefine certain steps of an algorithm 
+- [Visitor](Behavioral/Visitor) : represents an operation to be performed on instances of a set of classes
+
+## References
+
+Most of the definitions were taken from *Design Patterns: Elements of Reusable Object-Oriented Software* book written in 1994[^2] by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides (also known as the *gang-of-four*) and *Head First : Design Patterns*[^3] by Eric Freeman, Elisabeth Freeman, Kathy Sierra and Bert Bate.
+
+Most of the code is inspired or adapted from existing examples available on :
+
+- [Refactoring Guru](https://refactoring.guru)
+- [BTechGeeks](https://btechgeeks.com/)
+- [Digital Ocean](https://www.digitalocean.com) 
+- [Baeldung](https://www.baeldung.com/)
+
+## TBD
+
+- [x] C++ implementations
+- [ ] Java implementations
+- [ ] UML schemas
+
+---
+
+[^1]: https://en.wikipedia.org/wiki/Software_design_pattern
+[^2]: https://en.wikipedia.org/wiki/Design_Patterns
+[^3]: https://www.goodreads.com/en/book/show/56083609
+
+
+
+
+
+
 
