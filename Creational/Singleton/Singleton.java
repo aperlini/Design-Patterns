@@ -1,9 +1,3 @@
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!! unfinished implementation !!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 class Singleton {
 
 	private static Singleton instance;
@@ -23,6 +17,15 @@ class Singleton {
 	@Override
 	public String toString() {
 		return "Singleton(data="+this.data+")";
+	}
+	
+	public static void log(Object o) {
+		System.out.println(o);
+	}
+
+	public static void main(String[] args) {
+		Singleton s = Singleton.getInstance("new instance");
+		log(s);
 	}
 };
 
