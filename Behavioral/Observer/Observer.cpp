@@ -11,25 +11,23 @@ enum SUBTYPE {
 	YEARLY
 };
 
-/*
- * Observer interface must be implemented
- * wherever a class need to receive notification
- * through the 'update' method
- *
- */
+
+// Observer interface must be implemented
+// wherever a class needs to receive notification
+// through the 'update' method
+
 class Observer {
 	public:
 		virtual ~Observer() { }
 		virtual void update(SUBTYPE, std::string msg) const = 0;
 };
 
-/*
- * NewsletterManager class holds a reference to a map containing
- * a list of Observers related to specific subscription type.
- * The class offer methods to un/subscribe new Observers and
- * will notify every reader based on their subscription type.
- *
- */
+
+// NewsletterManager class holds a reference to a map containing
+// a list of Observers related to specific subscription types.
+// The class offer methods to un/subscribe new Observers and
+// will notify every observer based on their subscription type.
+
 class NewsLetterManager {
 	public:
 		NewsLetterManager(std::vector<enum SUBTYPE> sub_types) {
@@ -63,11 +61,9 @@ class NewsLetterManager {
 		std::map<enum SUBTYPE, std::vector<Observer*>> listeners;
 };
 
-/*
- * Publisher class holds a reference to a NewsLetterManager instance.
- * It triggers notification for weekkly and monthly subscribed users.
- *
- */
+
+// Publisher class holds a reference to a NewsLetterManager instance.
+// It triggers notification for weekly and monthly subscribed users.
 
 class Publisher {
 	public:
@@ -93,12 +89,9 @@ class Publisher {
 		std::string msg;
 };
 
-/*
- * Reader class implements the Observer and
- * redefine the 'update' method logic whenever
- * a notification may occur
- *
- */
+
+// Reader class implements the Observer and redefine 
+// the 'update' method logic whenever a notification may occur
 
 class Reader : public Observer {
 	public:

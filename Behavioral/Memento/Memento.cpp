@@ -3,11 +3,10 @@
 #include <vector>
 #include <map>
 
-/*
- * Memento Class is used as a representation
- * of the Originator state
- *
- */
+
+// Memento Class is used as a representation
+// of the Originator state
+
 class Memento {
 
 	public:
@@ -39,12 +38,9 @@ class Memento {
 
 };
 
-/*
- * Originator class offer methods to 
- * modify, save and restore the current
- * Memento instance
- *
- */
+
+// Originator class offer methods to modify, 
+// save and restore the current Memento instance
 
 class Originator {
 
@@ -77,14 +73,11 @@ class Originator {
 		double volume;
 };
 
-/*
- * StateHistory class holds a reference to 
- * a Memento map that will store every Memento 
- * instance being saved. It offers methods to 
- * save, remove or retrieve a specific state
- * of the object
- *
- */
+
+// StateHistory class holds a reference to a Memento map 
+// that will store every Memento instance being saved. 
+// It offers methods to save, remove or retrieve 
+// the object specific state
 
 class StateHistory {
 	public:

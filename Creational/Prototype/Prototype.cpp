@@ -2,6 +2,11 @@
 #include <memory>
 #include <vector>
 
+
+// Abstract Shape skeleton defines default 
+// object structure and the 'clone' method
+// that must be implemented
+
 class Shape {
 	private:
 		int x;
@@ -15,6 +20,12 @@ class Shape {
 		int get_y() const { return this->y; };
 		virtual std::string to_string() const = 0;
 };
+
+
+// All the subsequent concrete prototype classes
+// must redefine the 'clone' method that will return 
+// a new object by calling the constructor of the 
+// current class
 
 class Circle : public Shape {
 	private:
@@ -30,6 +41,7 @@ class Circle : public Shape {
 		}
 };
 
+
 class Square : public Shape {
 	private:
 		int side;
@@ -43,6 +55,7 @@ class Square : public Shape {
 			return "Square(x=" + std::to_string(get_x()) + ", y=" + std::to_string(get_y()) + ", side=" + std::to_string(side) + ")";
 		}
 };
+
 
 class Rect : public Shape {
 	private:
@@ -62,6 +75,8 @@ class Rect : public Shape {
 };
 
 int main() {
+
+	// Creating 'original' shapes
     std::vector<std::shared_ptr<Shape>> originals = {
         std::make_shared<Circle>(20, 20, 200),
         std::make_shared<Rect>(400, 400),
@@ -73,9 +88,10 @@ int main() {
         std::cout << s->to_string() << std::endl;
     }
 
-    std::cout << "\nDisplaying copies" << std::endl;
-
+	// Generating copies from originals
     std::vector<std::shared_ptr<Shape>> copies;
+
+	std::cout << "\nDisplaying copies" << std::endl;
 
     for (const auto &s : originals) {
         copies.push_back(s->clone());

@@ -2,24 +2,20 @@
 #include <string>
 #include <vector>
 
-// Order Interface
-/*
- * Common interface for all concrete command classes
- * `execute` method will encapsulates a specific action 
- * or set of actions
- *
- */
+
+// Common Order interface for all concrete command classes
+// where `execute` method will encapsulates a specific action 
+// or set of actions
+
 class Order {
 	public:
 		virtual void execute() const = 0;
 };
 
-// Default Stock class
-/*
- * Receiver represent the object that will
- * perform the different actions
- *
- */
+
+// Default Stock class that represents the object 
+// receiver that will perform the different actions
+
 class Stock {
 	public:
 		Stock(std::string n, int q) : name(n), quantity(q) {}
@@ -34,14 +30,12 @@ class Stock {
 		int quantity;
 };
 
-/*
- *
- * Concrete Command Classes hold a reference 
- * to the receiver object (Stock). They implement
- * and determine which behaviour will be called by
- * invoking specific actions on the Receiver.
- *
- */
+
+// Concrete Command classes hold a reference 
+// to the receiver object (Stock). They implement
+// and determine which behaviour will be called by
+// invoking specific actions on the Receiver.
+
 class BuyStockCommand : public Order {
 	public:
 		BuyStockCommand(Stock *s) : stock(s) {}
@@ -51,6 +45,7 @@ class BuyStockCommand : public Order {
 	private:
 		Stock *stock;
 };
+
 
 class SellStockCommand : public Order {
 	public:
@@ -63,12 +58,10 @@ class SellStockCommand : public Order {
 };
 
 
-/*
- * The invoker contains a list of commands.
- * Invokes the `execute` method on each object
- * when needed
- *
- */
+// The invoker contains a list of commands.
+// Invokes the `execute` method on each object
+// when needed
+
 class Broker {
 	public:
 		void take_order(Order *order) {

@@ -4,12 +4,10 @@
 #include <map>
 #include <unistd.h>
 
-/*
- * Device concrete class as a footprint
- * for all the subsequent classes of the
- * Audio System
- *
- */
+
+// Device concrete class as a footprint
+// for all the subsequent classes of the
+// Audio System
 
 class Device {
 	public:
@@ -41,11 +39,9 @@ class Device {
 		bool state;
 };
 
-/*
- * Subsequent concrete classes that constitute
- * each part from the Audio System
- *
- */
+
+// Subsequent concrete classes that constitute
+// each part of the Audio System
 
 class Speakers {
 	public:
@@ -112,12 +108,10 @@ class Amplifier : public Device {
 		};
 };
 
-/*
- * Facade concrete class holds references to the different
- * part of the whole system. It hides the complexity and 
- * offer public methods that will ease the setup of the system
- *
- */ 
+
+// Facade concrete class holds references to the different
+// part of the whole system. It hides the complexity and 
+// offer public methods that will ease the setup of the system 
 
 class Facade {
 	public:

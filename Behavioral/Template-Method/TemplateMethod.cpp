@@ -2,13 +2,11 @@
 #include <string>
 #include <vector>
 
-/*
- * Abstract class Game defines a virtual display_rule
- * which must be defined in every subclass that extends
- * the class. Concrete method 'play' will set the order
- * of operation to occur, when being invoked.
- *
- */
+
+// Abstract Game class defines a virtual 'display_rule' method
+// that must be redefined in every subclass. When being invoked, 
+// concrete 'play' method will set the order of operations to occur
+
 class Game {
 	public:
 		Game(std::string s) : game_type(s) {}
@@ -36,11 +34,9 @@ class Game {
 	
 };
 
-/*
- * Every subsequent classes must implement
- * 'display_rules" method
- *
- */
+
+// Every subsequent classes must implement
+// 'display_rules" method
 
 class Chess : public Game {
 	public:
@@ -50,6 +46,7 @@ class Chess : public Game {
 		}
 };
 
+
 class Go : public Game {
 	public:
 		Go(std::string s="Go") : Game(s) {}
@@ -57,6 +54,7 @@ class Go : public Game {
 			std::cout << get_name() << " is an abstract strategy board game for two players..." << "\n";
 		}
 };
+
 
 int main() {
 	

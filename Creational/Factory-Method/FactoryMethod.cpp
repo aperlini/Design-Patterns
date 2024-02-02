@@ -5,12 +5,20 @@
 #include <ctime>
 #include <exception>
 
+
+// Button interface provides abstractions
+// that any concrete product needs to implement
+
 class Button {
 	public:
 		virtual ~Button() {}
 		virtual void render() const = 0;
 		virtual void click() const = 0;
 };
+
+
+// Dialog creator class defines an abstract (factory) 'createBtn' 
+// method that will return the appropriate Button object
 
 class Dialog {
 	public:
@@ -24,6 +32,10 @@ class Dialog {
 		}
 };
 
+
+// All the subsequent concrete classes provide
+// implementations for each Button type
+
 class WindowsBtn : public Button {
 	public:
 		void render() const override {
@@ -34,6 +46,7 @@ class WindowsBtn : public Button {
 			std::cout << "Click on Windows Btn" << std::endl;
 		}
 };
+
 
 class LinuxBtn : public Button {
 	public:
@@ -46,6 +59,7 @@ class LinuxBtn : public Button {
 		}
 };
 
+
 class WebBtn : public Button {
 	public:
 		void render() const override {
@@ -57,6 +71,10 @@ class WebBtn : public Button {
 		}
 };
 
+
+// All the subsequent concrete classes provide
+// implementations to create the appropriate Dialog
+
 class WindowsDialog : public Dialog {
 	public:
 		Button *createBtn() const override {
@@ -64,12 +82,14 @@ class WindowsDialog : public Dialog {
 		}
 };
 
+
 class LinuxDialog : public Dialog {
 	public:
 		Button *createBtn() const override {
 			return new LinuxBtn();
 		}
 };
+
 
 class WebDialog : public Dialog {
 	public:
@@ -94,7 +114,6 @@ int get_rand(int from, int to) {
 }
 
 confs get_config() {
-	
 	return (confs)(get_rand(0, 3));
 }
 

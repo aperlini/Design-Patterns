@@ -1,6 +1,8 @@
 #include <iostream>
 
-// Square Interface
+
+// Square interface 
+
 class Square {
 	public:
 		virtual ~Square() {}
@@ -8,7 +10,9 @@ class Square {
 		virtual void print_area() const = 0;
 };
 
-// Rectangle Interface
+
+// Rectangle interface
+
 class Rect {
 	public:
 		virtual ~Rect() {}
@@ -16,6 +20,9 @@ class Rect {
 		virtual void set_width(int w) = 0;
 		virtual void print_area() const = 0;
 };
+
+
+// Concrete implementations of the Rect and Square interfaces
 
 class ChessBoard : public Square {
 	private:
@@ -28,6 +35,7 @@ class ChessBoard : public Square {
 			std::cout << (this->side * this->side) << std::endl;
 		}
 };
+
 
 class TennisCourt : public Rect {
 	private:
@@ -44,6 +52,10 @@ class TennisCourt : public Rect {
 			std::cout << (this->width * this->len) << std::endl;
 		}
 };
+
+// The RectAdapter class is a wrapper that implements 
+// the Square interface and will translate all requests
+// from the client  
 
 class RectAdapter : public Square {
 	public:

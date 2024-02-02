@@ -5,12 +5,19 @@
 #include <cstdlib>
 #include <ctime>
 
-// Button interface
+
+// Button interface provides abstractions
+// to represent any type of button
+
 class Button {
 	public:
 		virtual ~Button() {}
 		virtual void paint() const = 0;
 };
+
+
+// All subsequent concrete implementations 
+// of the Button interface 
 
 class MacOSBtn : public Button {
 	void paint() const override {
@@ -18,11 +25,13 @@ class MacOSBtn : public Button {
 	}
 };
 
+
 class WindowsBtn : public Button {
 	void paint() const override {
 		std::cout << "WindowsBtn paint action" << std::endl;
 	}
 };
+
 
 class LinuxBtn : public Button {
 	void paint() const override {
@@ -30,12 +39,19 @@ class LinuxBtn : public Button {
 	}
 };
 
-// CheckBox interface
+
+// CheckBox interface provides abstractions
+// to represent any type of CheckBox
+
 class CheckBox {
 	public:
 		virtual ~CheckBox() {}
 		virtual void paint() const = 0;
 };
+
+
+// All subsequent concrete implementations 
+// of the CheckBox interface 
 
 class MacOSCheckBox : public CheckBox {
 	void paint() const override {
@@ -55,13 +71,21 @@ class LinuxCheckBox : public CheckBox {
 	}
 };
 
-// AbstractFactory interface
+
+// AbstractFactory interface declares methods 
+// to create buttons and checkboxes
+
 class GUIFactory {
 	public:
 		virtual ~GUIFactory() {}
 		virtual Button *createBtn() const = 0;
 		virtual CheckBox *createCheckBox() const = 0;
 };
+
+
+// All subsequent concrete implementations of the AbstractFactory 
+// interface that are responsible for creating GUI elements for each
+// related type 
 
 class WindowsFactory : public GUIFactory {
 	public:
@@ -105,7 +129,6 @@ int get_rand(int from, int to) {
 }
 
 confs get_config() {
-	
 	return (confs)(get_rand(0, 3));
 }
 
@@ -134,8 +157,7 @@ int main() {
 			throw std::invalid_argument("configuration does not exists.");
 
 	}
-	
-	
+		
 	// Creating Factory Elements
 	Button *btn = factory->createBtn();
 	CheckBox *check = factory->createCheckBox();

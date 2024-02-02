@@ -6,7 +6,7 @@ Mostly implemented in C++ (at the moment) and Java. The aim of this repository i
 
 A design pattern is a reusable solution to a commonly occurring problem within a given context in software design. [...] It is a description or template for how to solve a problem that can be used in many different situations.[^1] 
 
-### Creational
+### [Creational](Creational/README.md)
 
 > How to instantiate objects while increasing flexibility and code reuse
 
@@ -16,7 +16,7 @@ A design pattern is a reusable solution to a commonly occurring problem within a
 - [Prototype](Creational/Prototype) : make new instances by copying existing instances
 - [Singleton](Creational/Singleton) : ensures a class has only one instance and provides a global point of access to it
 
-### Structural
+### [Structural](Structural/README.md)
 
 > How to assemble classes and objects into larger structures
 
@@ -28,7 +28,7 @@ A design pattern is a reusable solution to a commonly occurring problem within a
 - [Fly-Weight](Structural/Fly-Weight) : one instance of a class provides many "virtual instances" of a similar object
 - [Proxy](Structural/Proxy) : placeholder for another object to control access to it
 
-### Behavioral
+### [Behavioral](Behavioral/README.md)
 
 > How classes and objects interact and distribute responsibility
 

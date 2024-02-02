@@ -3,11 +3,10 @@
 class Switch;
 class State;
 
-/*
- * Common State Interface creates an abstraction 
- * to toggle Switch object instances
- *
- */
+
+// Common State Interface creates an abstraction 
+// to toggle Switch object instances
+
 class State {
 public:
     virtual ~State() {}  
@@ -15,12 +14,9 @@ public:
 };
 
 
-/*
- * Switch class holds a reference to 
- * a State instance that can have multiple 
- * internal states 
- *
- */
+// Switch class holds a reference to a State 
+// instance that can have multiple internal states 
+
 class Switch {
 public:
     Switch(State* s) : state(s) {}
@@ -36,12 +32,11 @@ private:
     State* state;
 };
 
-/*
- * Concrete States Classes implement the State interface 
- * and redefine toggle method to specify the appropriate 
- * state handler
- *
- */
+
+// Concrete States classes implement the State interface 
+// and redefine 'toggle' method to specify the appropriate 
+// state handler
+
 class OffState : public State {
 public:
     ~OffState() override {} 

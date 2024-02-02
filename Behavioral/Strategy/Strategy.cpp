@@ -1,23 +1,20 @@
 #include <iostream>
 #include <string>
 
-// Gun interface
-/*
- * Common interface which every 
- * class must implement
- *
- */
+
+// Common Strategy interface which 
+// every class must implement
+
 class Gun {
 	public:
 		virtual ~Gun() {}
 		virtual void fire() const = 0;
 };
 
-// Snipper
-/*
- * Concrete implementation of Strategy interface
- *
- */
+
+// All subsequent concrete classes 
+// that implements the interface
+
 class Snipper : public Gun {
 	public:
 		void fire() const override {
@@ -25,7 +22,7 @@ class Snipper : public Gun {
 		}
 };
 
-// Machine Gun
+
 class MachineGun : public Gun {
 	public:
 		void fire() const override {
@@ -33,7 +30,7 @@ class MachineGun : public Gun {
 		}
 };
 
-// Grenade Launcher
+
 class GrenadeLauncher : public Gun {
 	public:
 		void fire() const override {
@@ -41,14 +38,11 @@ class GrenadeLauncher : public Gun {
 		}
 };
 
-// Soldier Class
-/*
- * Contains reference to Stratery Object.
- * When context receives request, it delegates
- * to the Strategy object to perform appropriate
- * behaviour.
- *
- */
+
+// Soldier concrete class contains a reference to the Strategy object instance
+// When it receives request, it delegates the action to the instance for it to 
+// perform the appropriate behaviour.
+
 class Soldier {
 	public:
 		// Using pointers to manage object ownership
@@ -73,7 +67,6 @@ int main() {
 	
 	// Using pointers is necessary to manage object ownership
 	// and to allow object change during the container object's lifecycle
-
 	Gun *snipper = new Snipper();
 	Gun *machine = new MachineGun();
 	Gun *grenade = new GrenadeLauncher();

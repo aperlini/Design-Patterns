@@ -1,11 +1,9 @@
 #include <iostream>
 
-/*
- * Proxy interface will expose methods
- * to be implemented both in the concrete class
- * and in Proxy concrete class
- *
- */
+
+// Proxy interface will expose methods
+// to be implemented both in the concrete class
+// and in Proxy concrete class
 
 class Proxy {
 	public:
@@ -13,12 +11,10 @@ class Proxy {
 		virtual void process() = 0;
 };
 
-/*
- * Service class represents an expensive
- * class to be used and implements the 'process'
- * method of Proxy interface
- *
- */
+
+// Service class represents an expensive
+// class to be used and implements the 'process'
+// method of Proxy interface
 
 class Service : public Proxy {
 	public:
@@ -37,13 +33,11 @@ class Service : public Proxy {
 		}
 };
 
-/*
- * Proxy Service class implement the Proxy interface
- * It holds a reference to a Service instance that will
- * be instanciated in the redefined 'process' method,
- * once the Service object is available
- *
- */
+
+// Proxy Service class implement the Proxy interface
+// It holds a reference to a Service instance that will
+// be instanciated in the redefined 'process' method,
+// once the Service object is available
 
 class ProxyService : public Proxy {
 	public:

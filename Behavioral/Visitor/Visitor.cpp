@@ -7,12 +7,11 @@
 class Book;
 class Fruit;
 
-/*
- * Visitor interface provide different visiting
- * methods that can be overloaded based on the
- * necessary implementations
- *
- */
+
+// Visitor interface provides different visiting
+// methods that can be overloaded based on the
+// necessary implementations
+
 class Visitor {
 	public:
 		virtual ~Visitor() { } 
@@ -20,11 +19,9 @@ class Visitor {
 		virtual int visit(Fruit *f) = 0;
 };
 
-/*
- * Item interface in which 'accept' methods
- * takes a Visitor interface as unique param
- *
- */
+
+// Item interface in which 'accept' methods
+// takes a Visitor interface as unique param
 
 class Item {
 	public:
@@ -33,13 +30,10 @@ class Item {
 		virtual int get_price() const = 0;
 };
 
-/*
- * Every Concrete Class that implements 
- * Item interface must redefine the 
- * 'accept' method and pass themselves as
- * argument in the 'visit' method when invoked
- *
- */
+
+// Every concrete class that implements the Item interface 
+// must redefine the 'accept' method and pass themselves as
+// argument in the 'visit' method when invoked
 
 class Book : public Item {
 	public:
@@ -59,6 +53,7 @@ class Book : public Item {
 		int price;
 };
 
+
 class Fruit : public Item {
 	public:	
 		Fruit(std::string n, int p) : name(n), price(p) { }
@@ -76,13 +71,10 @@ class Fruit : public Item {
 		int price;
 };
 
-/*
- * Concrete class implementing the Visitor
- * interface is responsible to redefine all
- * its methods and set the logic that must
- * be implemented
- *
- */
+
+// Concrete class implementing the Visitor interface that 
+// is responsible to redefine all its methods and set the 
+// logic that must be implemented
 
 class ShoppingCart : public Visitor {
 	public:

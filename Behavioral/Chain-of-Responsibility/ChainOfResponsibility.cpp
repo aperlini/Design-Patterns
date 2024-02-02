@@ -10,11 +10,9 @@ enum FOOD_TYPE{
 	HOTDOG
 };
 
-/*
- * Request class simply stores 
- * current order type 
- *
- */
+
+// Request class simply stores 
+// current order type 
 
 class Request {
 	
@@ -27,12 +25,10 @@ class Request {
 		enum FOOD_TYPE order_type;
 };
 
-/*
- * Handler Abstract Class hold a reference
- * to the next handler and define successors
- * accessors default methods. 
- *
- */
+
+// Handler Abstract Class hold a reference
+// to the next handler and define successors
+// accessors default methods. 
 
 class Handler {
 	public:
@@ -49,12 +45,10 @@ class Handler {
 		
 };
 
-/*
- * All Concrete Classes extend Handler Abstract class
- * They must redefine 'handle_request' method by choosing
- * how to treat the incoming request
- *
- */
+
+// All Concrete Classes extend Handler Abstract class
+// They must redefine 'handle_request' method by choosing
+// how to treat the incoming request
 
 class PizzaHandler : public Handler {
 	public:

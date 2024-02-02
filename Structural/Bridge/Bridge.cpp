@@ -4,7 +4,8 @@
 #include <cstdlib>
 #include <ctime>
 
-// Bird Interface
+// Bird interface 
+
 class Bird {
 	public:
 		virtual ~Bird() {}
@@ -12,7 +13,9 @@ class Bird {
 		virtual void change_pos(int x, int y) = 0;
 };
 
-// Implements Interface
+
+// Concrete implementations of the Bird interface
+
 class Crow : public Bird {
 	private:
 		std::string type;
@@ -30,7 +33,7 @@ class Crow : public Bird {
 		}
 };
 
-// Implements Interface
+
 class Duck : public Bird {
 	private:
 		std::string type;
@@ -48,8 +51,9 @@ class Duck : public Bird {
 		}
 };
 
+// The Flyable abstract class hold a reference to a bird object instance 
+// to be used for subsequent concrete implementations
 
-// Flyable Abstract Class
 class Flyable {
 	protected:
 		Bird *bird;
@@ -61,7 +65,10 @@ class Flyable {
 };
 
 
-// Extends Abstract Class
+// The FlyingCharacter concrete class implementation of 
+// the Flyable abstract class and redefines its methods
+// for every bird instances
+
 class FlyingCharacter : public Flyable {
 	private:
 		int x;

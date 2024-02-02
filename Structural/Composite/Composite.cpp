@@ -6,6 +6,10 @@
 #include <algorithm>
 #include <map>
 
+// Teacher Concrete Class holds a reference to a list 
+// of teachers instances to create a heirarchical tree 
+// structure it can refer to
+
 class Teacher {
 	
 	private:
@@ -17,21 +21,14 @@ class Teacher {
 
 		Teacher(std::string n, int s) : name(n), salary(s) {}
 		
-		/*
-		 * That method helps us to 
-		 * get vector index of a certain 
-		 * Teacher instance
-		 *
-		 */
+		// 'vec_index' method helps us to retrieve vector index
+		//  for a certain Teacher instance
 		int vec_index(const Teacher& to_be_found) const {
 			auto it = find(this->reportees.begin(), this->reportees.end(), to_be_found);
 			return (it != this->reportees.end()) ? std::distance(this->reportees.begin(), it) : -1;
 		} 
 		
-		/*
-		 * Usage of std::find requires (re)definition of '==' operator
-		 *
-		 */
+		// Usage of std::find requires (re)definition of '==' operator
 		bool operator==(const Teacher& other) const {
 			return name == other.name && salary == other.salary;
 		}
@@ -45,11 +42,9 @@ class Teacher {
 			std::cout << this->reportees[index].name << std::endl;			
 		}
 		
-		/*
-		 * Variadic function template to take 
-		 * any number of arguments in 'addAll' method
-		 *
-		 */
+		
+		// Variadic function template to take 
+		// any number of arguments in 'addAll' method
 		template<typename ... Args>
 		void addAll(Args&&... reportees) {
 			(this->reportees.emplace_back(std::forward<Args>(reportees)), ...);

@@ -11,24 +11,22 @@ enum Color {
 	yellow
 };
 
-/*
- * Shape interface defines 'draw' method to implemented
- * in all subsequent concrete classes that will take advantage
- * of it
- *
- */
+
+// Shape interface defines 'draw' method to be implemented
+// in all subsequent concrete classes that will take advantage
+// of it
+
 class Shape {
 	public:
 		virtual ~Shape() = default;
 		virtual void draw() = 0;
 };
 
-/*
- * Circle class implement the Shape interface
- * and redefine 'draw' method to display circle
- * informations
- *
- */
+
+// Circle class implement the Shape interface
+// and redefine 'draw' method to display circle
+// informations
+
 class Circle : public Shape {
 
 	public:
@@ -60,15 +58,13 @@ class Circle : public Shape {
 
 };
 
-/*
- * Static ShapeFactory holds a static map member
- * which will be shared accross all ShapeFactory instances
- * The 'circle_map' member will enable the creation of unique circle
- * object instances, based on their color. The 'get_circle' method will
- * handle the logic upon the creation of new objects or simply returning
- * the current existing circle
- *
- */
+
+// Static ShapeFactory holds a static map member
+// which will be shared accross all ShapeFactory instances
+// The 'circle_map' member will enable the creation of unique circle
+// object instances, based on their color. The 'get_circle' method will
+// handle the logic upon the creation of new objects or simply returning
+// the current existing circle
 
 class ShapeFactory{
 	public:
@@ -95,29 +91,29 @@ Shape* ShapeFactory::get_circle(enum Color color) {
 	return c;
 }
 
-/*
- * Generate random integer
- * based on min/max range
- * 
- * @params:
- * 	- min range
- *	- max range
- *
- * @return:
- * 	- random value between min and max
- *
- */
+
+// Generate random integer
+// based on min/max range
+// 
+// @params:
+// 	- min range
+//	- max range
+//
+// @return:
+// 	- random value between min and max
+//
+
 int rand_pos(int min, int max) {
 	return min + std::rand() / (RAND_MAX / max);
 }
 
-/*
- * Generate random Color
- *
- * @return:
- * 	- random enum Color value
- *
- */
+
+// Generate random Color
+//
+// @return:
+// 	- random enum Color value
+//
+//
 
 enum Color rand_color() {
 	int index = rand_pos(0, 4);

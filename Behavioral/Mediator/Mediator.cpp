@@ -2,22 +2,18 @@
 #include <string>
 #include <vector>
 
-/*
- * Connected Users do not communicate directly on the server
- * The Mediator will handle the task of communications between
- * server and users
- *
- */
+
+// Connected Users do not communicate directly on the server
+// The Mediator will handle the task of communications between
+// server and users
 
 class ChatServer;
 class ChatServerMediator;
 class ConnectedUser;
 
-/*
- * Chat Server interface creates abstractions
- * to add a user and msg from specific user
- *
- */
+
+// Chat Server interface creates abstractions
+// to add a user and msg from specific user
 
 class ChatServer {
 	public:
@@ -26,14 +22,11 @@ class ChatServer {
 		virtual void send_msg(ConnectedUser *user, std::string s) = 0;
 };
 
-/*
- * Chat Server Mediator hold a reference to 
- * a list of connected users. It implements 
- * the Chat Server interface, add new user to 
- * the list and dispatch all communications from 
- * clients.
- *
- */
+
+// Chat Server Mediator hold a reference to a list 
+// of connected users. It implements the Chat Server 
+// interface, add new user to the list and dispatch all 
+// communications from clients.
 
 class ChatServerMediator : public ChatServer {
 	public:
@@ -44,12 +37,10 @@ class ChatServerMediator : public ChatServer {
 
 };
 
-/*
- * Connected User class hold a reference to 
- * a server instance. It enable a user to join 
- * a specific server and send and receive messages 
- *
- */
+
+// Connected User class hold a reference to 
+// a server instance. It enable a user to join 
+// a specific server and send and receive messages 
 
 class ConnectedUser {
 	public:
@@ -63,10 +54,8 @@ class ConnectedUser {
 		ChatServer* mediator_server;
 };
 
-/*
- * ConnectedUser
- *
- */
+
+// ConnectedUser methods implementations
 
 std::string ConnectedUser::get_username() {
 	return this->username;
@@ -86,16 +75,12 @@ void ConnectedUser::recv_msg(ConnectedUser *user, std::string s) {
 	std::cout << "Receiving : " << s << ", from : " << user->get_username() << "\n";
 }
 
-/*
- * ChatServerMediator
- *
- */
 
+// ChatServerMediator methods implementations
 
 void ChatServerMediator::add_user(ConnectedUser *user) {
 	this->users_list.push_back(user);
 }
-
 
 void ChatServerMediator::send_msg(ConnectedUser *user, std::string s) {
 	for(const auto &u : this->users_list) {

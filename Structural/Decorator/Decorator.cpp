@@ -1,11 +1,9 @@
 #include <iostream>
 #include <string>
 
-/*
- * Decorator interface provides 'make' 
- * method that must be implemented
- *
- */
+
+// Decorator interface provides 'make'
+// method that must be implemented
 
 class Decorator {
 	public:
@@ -13,12 +11,10 @@ class Decorator {
 		virtual std::string make() = 0;
 };
 
-/*
- * The Sandwich class, a concrete component
- * implements the Decorator interface and 
- * redefines the 'make()' method
- *
- */
+
+// The Sandwich class, a concrete component
+// implements the Decorator interface and 
+// redefines the 'make()' method
 
 class Sandwich : public Decorator {
 	public:
@@ -28,13 +24,11 @@ class Sandwich : public Decorator {
 		
 };
 
-/*
- * The SandwichDecorator abstract class extends 
- * the Sandwich class and serves as a base class 
- * for concrete decorators. It contains a reference 
- * to a Sandwich object used during the 'make()' method
- *
- */
+
+// The SandwichDecorator abstract class extends 
+// the Sandwich class and serves as a base class 
+// for concrete decorators. It contains a reference 
+// to a Sandwich object used during the 'make()' method
 
 class SandwichDecorator : public Sandwich {
 	public:
@@ -50,12 +44,10 @@ class SandwichDecorator : public Sandwich {
 
 };
 
-/*
- * The CheeseDecorator and PastramiDecorator classes 
- * extend SandwichDecorator. They augment the sandwich 
- * with specific functionalities (cheese and pastrami)
- *
- */
+
+// The CheeseDecorator and PastramiDecorator classes 
+// extend SandwichDecorator. They augment the sandwich 
+// with specific functionalities (cheese and pastrami)
 
 class CheeseDecorator : public SandwichDecorator {
 	public:
