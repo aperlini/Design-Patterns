@@ -1,85 +1,132 @@
 #include <iostream>
 #include <vector>
-#include <string>
-#include <map>
+#include <stdexcept>
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!! inadequate and unfinished implementation !!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-// Item interface
-class Item {
-	public:
-		const char *content;
-		Item(const char *c) : content(c) {}
-};
+// Iterator interface defines the operations
+// required to iterate through a collection
 
-// Iterator interface
+template <typename T>
 class Iterator {
-	public:
-		virtual ~Iterator() {}
-		virtual const Item& next() = 0;
-		virtual bool has_next() const = 0;
+public:
+    virtual ~Iterator() = default;
+    virtual void begin() = 0;
+    virtual bool end() const = 0;
+    virtual void next() = 0;
+    virtual T current() const = 0;
 };
 
-// Iterable interface
-class Iterable {
+
+// Collection class declares public methods
+// to access and modify elements. It also defines
+// a 'create_iterator' method that will return an
+// instance of a concrete iterator each time it is
+// requested.
+
+template <typename T>
+class Collection {
 	public:
-		virtual Iterator create_iterator() const = 0;
-};
-
-// implements Iterable
-class ConcreteCollection : public Iterable {
-	private:
-		const char *items[4] = {"diodes", "programmable devices", "transistors", "integrated circuits" };
-		int length = 4;
-	public:
+		Collection() { }
 		
-		class CollectionIterator : public Iterator {
-			
-			private:
-				const ConcreteCollection *coll;
-				int index;
-
-			public:
-				CollectionIterator(const ConcreteCollection *c) : coll(c), index(0) {}
-				
-				bool has_next() const override {
-					return this->index < this->coll->length;
-				}
-
-				const Item& next() override {
-					if(this->has_next()) {
-						const Item& c = this->coll->items[index]; 
-						index++;
-						return c;
-					}
-					throw std::out_of_range("No more elements");
-				}
-				
-		};
-		
-		Iterator create_iterator() const override {
-			return new CollectionIterator(this);
+		T at(int i) const {
+			return this->items.at(i);
 		}
 
+		int size() const {
+			return this->items.size();
+		}
+
+		void insert(T val) {
+			this->items.push_back(val);
+		}
+
+		Iterator<T> *create_iterator();
+
+	private:
+		std::vector<T> items;
+
 };
+
+
+// ConcreteIterator implements the Iterator interface
+// and redefine its methods to traverse the collection
+
+template <typename T>
+class ConcreteIterator : public Iterator<T> {
+
+public:
+	ConcreteIterator(Collection<T> *i) : items(i) { }
+	~ConcreteIterator() {}
+
+	void begin() override {
+		this->index = 0;
+	}
+
+	void next() override {
+		this->index++;
+	}
+
+	bool end() const override {
+		return (this->index >= this->items->size());
+	}
+
+	T current() const override {
+		if(this->end()) {
+			throw std::out_of_range("undefined index");
+		}
+		return this->items->at(index);
+	}
+
+private:
+	Collection<T> *items;
+	int index;
+
+};
+
+
+// The method that provides the Iterator 
+// must return the ConcreteIterator instance
+
+template <typename T>
+Iterator<T> *Collection<T>::create_iterator() {
+	return new ConcreteIterator(this);
+}
 
 
 int main() {
 	
-	ConcreteCollection cc = ConcreteCollection();
-	ConcreteCollection::Iterator it = cc.create_iterator();
+	// Declaring a collection of 
+	// integer and adding elements to t
+	Collection<int> c1;	
+	c1.insert(23);
+	c1.insert(32);
 	
-	while(it.has_next()) {
-		const Item& item = it.next();
-		std::cout << item.content << std::endl;
+	// Defining an Iterator and traversing the collection
+	Iterator<int> *it = c1.create_iterator();
+
+	for(it->begin(); !it->end(); it->next()) {
+		std::cout << it->current() << "\n";
 	}
 
 	delete it;
+	
+	// Declaring a collection of 
+	// strings and adding elements to it
+	Collection<std::string> c2;	
+	c2.insert("Hello");
+	c2.insert("Universe");
+	
+
+	// Defining an Iterator and traversing the collection
+	Iterator<std::string> *it_2 = c2.create_iterator();
+	
+	for(it_2->begin(); !it_2->end(); it_2->next()) {
+		std::cout << it_2->current() << "\n";
+	}
+
+	delete it_2;
 
 
-	return 0;
+    return 0;
 }
+
