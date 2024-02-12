@@ -59,7 +59,6 @@ class TennisCourt : public Rect {
 
 class RectAdapter : public Square {
 	public:
-		Rect *rect;
 		RectAdapter(Rect *rect) : rect(rect) {}
 		void set_side(int i) override {
 			rect->set_len(i);
@@ -68,6 +67,9 @@ class RectAdapter : public Square {
 		void print_area() const override {
 			rect->print_area();
 		}
+	private:
+		Rect *rect;
+		
 };
 
 

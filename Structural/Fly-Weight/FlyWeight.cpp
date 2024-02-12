@@ -31,7 +31,7 @@ class Circle : public Shape {
 
 	public:
 		virtual ~Circle() { }
-		Circle(enum Color c) :  color(c) { }
+		Circle(Color c) :  color(c) { }
 		void draw() override {
 			std::cout << "Circle(x=" << this->pos_x << ", y=" << this->pos_y << ", radius=" << this->radius <<  ", color=" << this->colors[this->color] << ") \n";
 		}
@@ -44,15 +44,15 @@ class Circle : public Shape {
 		void set_radius(int r) {
 			this->radius = r;
 		}
-		std::string get_color(enum Color color) {
+		std::string get_color(const Color& color) {
 			return this->colors[color];
 		}
 	private:
 		int pos_x;
 		int pos_y;
 		int radius;
-		enum Color color;
-		std::map<enum Color, std::string> colors{
+		Color color;
+		std::map<Color, std::string> colors{
 			{ red, "Red" }, { blue, "Blue" },{ green, "Green" }, { yellow, "Yellow" }
 		};
 
@@ -66,21 +66,21 @@ class Circle : public Shape {
 // handle the logic upon the creation of new objects or simply returning
 // the current existing circle
 
-class ShapeFactory{
+class ShapeFactory {
 	public:
 		static void clean_up() {
 			for(const auto &[k, circle] : circle_map) {
 				delete circle;
 			}
 		}
-		static Shape *get_circle(enum Color color);
+		static Shape *get_circle(const Color& color);
 	private:
-		static std::map<enum Color, Circle*> circle_map;
+		static std::map<Color, Circle*> circle_map;
 };
 
-std::map<enum Color, Circle*> ShapeFactory::circle_map{};
+std::map<Color, Circle*> ShapeFactory::circle_map{};
 
-Shape* ShapeFactory::get_circle(enum Color color) {
+Shape* ShapeFactory::get_circle(const Color& color) {
 	Circle *c = circle_map[color];
 
 	if(c == nullptr) {
