@@ -78,9 +78,9 @@ int main() {
 
 	// Creating 'original' shapes
     std::vector<std::shared_ptr<Shape>> originals = {
-        std::make_shared<Circle>(20, 20, 200),
-        std::make_shared<Rect>(400, 400),
-        std::make_shared<Square>(10, 10, 100)};
+	std::make_shared<Circle>(20, 20, 200),
+	std::make_shared<Rect>(400, 400),
+	std::make_shared<Square>(10, 10, 100)};
 
     std::cout << "Displaying original shapes" << std::endl;
 

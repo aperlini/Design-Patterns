@@ -29,11 +29,8 @@ class Computer {
 		}
 
 
-
 	// Nested Builder class whose aim 
 	// is to build the computer parts
-
-	public:
 		class Builder {
 			private:
 				int disk_space;
@@ -43,22 +40,22 @@ class Computer {
 			
 			public:
 				Builder() : disk_space(0), ram(0), brand(""), hdmi(false) {}
-				Builder& setDiskSpace(int ds) {
+				Builder& set_disk_space(int ds) {
 					this->disk_space = ds;	
 					return *this;
 				}
 
-				Builder& setRAM(int ram) {
+				Builder& set_ram(int ram) {
 					this->ram = ram;
 					return *this;
 				}
 
-				Builder& setBrand(std::string brand) {
+				Builder& set_brand(std::string brand) {
 					this->brand = brand;
 					return *this;
 				}
 
-				Builder& setHDMI(bool hdmi) {
+				Builder& set_hdmi(bool hdmi) {
 					this->hdmi = hdmi;
 					return *this;
 				}
@@ -77,16 +74,16 @@ int main() {
 	Computer::Builder builder;
 
 	// Building custom computer c1
-	Computer c1 = builder.setDiskSpace(200)
-		   				  .setRAM(20)
-			   			  .setBrand("Toshiba")
-			   			  .setHDMI(true)
+	Computer c1 = builder.set_disk_space(200)
+		   				  .set_ram(20)
+			   			  .set_brand("Toshiba")
+			   			  .set_hdmi(true)
 			   			  .build();
 	
 	// Building custom computer c2
-	Computer c2 = builder.setDiskSpace(500)
-		   				  .setRAM(10)
-			   			  .setBrand("Lenovo")
+	Computer c2 = builder.set_disk_space(500)
+		   				  .set_ram(10)
+			   			  .set_brand("Lenovo")
 			   			  .build();
 
 	std::cout << c1.to_string() << "\n";
