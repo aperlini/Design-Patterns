@@ -9,30 +9,32 @@ classDiagram
       Square <|.. RectAdapter:implements
 
       class Square {
-          +void set_side(int i)
-          +void print_area()
+      	  <<interface>>
+          +set_side(i:int):void
+          +print_area():void
       }
       class Rect {
-          +void set_len(int i)
-          +void set_width(int w)
-          +void print_area()
+      	  <<interface>>
+          +set_len(i:int):void
+          +set_width(w:int):void
+          +print_area():void
       }
       class ChessBoard {
-          +void set_side(int i)
-          +void print_area()
-          -int side
+          +set_side(i:int):void
+          +print_area():void
+          -side:int
       }
       class TennisCourt {
-          +void set_len(int i)
-          +void set_width(int w)
-          +void print_area()
-          -int len
-          -int width
+          +set_len(i:int):void
+          +set_width(w:int):void
+          +print_area():void
+          -len:int
+          -width:int
       }
       class RectAdapter {
-          +void set_side(int i)
-          +void print_area()
-          -Rect *rect
+          +set_side(i:int):void
+          +print_area():void
+          -rect:Rect
       }
 ```
 

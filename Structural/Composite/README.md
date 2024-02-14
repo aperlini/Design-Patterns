@@ -8,15 +8,15 @@ classDiagram
 	Teacher *-- Teacher:contains
 
 	class Teacher {
-          +void add(const Teacher& t)
-          +void addAll(Args&&... reportees)
-          +void remove(const Teacher& t)
-          +vector:Teacher get_reportees()
-          +void print_infos()
-          +void print_reportees()
-          -string name
-          -int salary
-          -vector:Teacher reportees
+          +add(t:Teacher):void
+          +addAll(reportees:vector(Teacher)):void
+          +remove(t:Teacher):void
+          +get_reportees():vector(Teacher)
+          +print_infos():void
+          +print_reportees():void
+          -name:string
+          -salary:int
+          -reportees:vector(Teacher)
       }
 ```
 

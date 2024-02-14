@@ -8,26 +8,26 @@ classDiagram
 	Shape <|.. Circle:implements
 	Circle <-- ShapeFactory:creates
 	
-	
 	class Shape {
-		+void draw()
+		<<interface>>
+		+draw():void
 	}
 	
 	class Circle {
-		+void draw()
-		+void set_x(int x)
-		+void set_y(int y)
-		+void set_radius(int r)
-		+string get_color(enum Color c)
-		-int pos_x
-		-int pos_y
-		-enum Color c
-		-map:Color,string colors
+		+draw():void
+		+set_x(x:int):void
+		+set_y(y:int):void
+		+set_radius(r:int):void
+		+get_color(c:Color):string
+		-pos_x:int
+		-pos_y:int
+		-c:Color
+		-colors:map(Color,string)
 	}
 	
 	class ShapeFactory {
-		+static Shape *get_circle(enum Color c)
-		-static map:Color,Circle* circle_map
+		+static get_circle(c:Color):Shape
+		-static circle_map:map(Color,Circle)
 	}
 	
 ```

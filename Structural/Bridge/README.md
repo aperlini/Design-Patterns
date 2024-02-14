@@ -11,33 +11,35 @@ classDiagram
       Flyable <|-- FlyingCharacter:extends
 	
       class Bird {
-          +void make_sound()
-          +void change_pos(int x, int y)
+      	  <<interface>>
+          +make_sound():void
+          +change_pos(x:int, y:int):void
       }
       class Crow {
-          +void make_sound()
-          +void change_pos(int x, int y)
-          -string type
-          -int x
-          -int y
+          +make_sound():void
+          +change_pos(x:int, y:int):void
+          -type:string
+          -x:int
+          -y:int
       }
       class Duck {
-          +void make_sound()
-          +void change_pos(int x, int y)
-          -string type
-          -int x
-          -int y
+          +make_sound():void
+          +change_pos(x:int, y:int):void
+          -type:string
+          -x:int
+          -y:int
       }
       class Flyable {
-          +void tweet()
-          +void move(int x, int y)
-          #Bird bird
+      	  <<abstract>>
+          +tweet():void
+          +move(x:int, y:int):void
+          #bird:Bird
       }
       class FlyingCharacter {
-          +void tweet(int i)
-          +void move(int x, int y)
-          -int x
-          -int y
+          +tweet(i:int):void
+          +move(x:int, y:int):void
+          -x:int
+          -y:int
       }
 ```
 

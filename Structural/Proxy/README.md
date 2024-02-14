@@ -9,17 +9,18 @@ classDiagram
 	Proxy <|.. ProxyService:implements
 	
 	class Proxy {
-		+void process()
+		<<interface>>
+		+process():void
 	}
 	
 	class Service {
-		+void process()
-		-void init_heavy_config()
+		+process();void
+		-init_heavy_config():void
 	}
 	
 	class ProxyService {
-		+void process()
-		-Service *obj
+		+process():void
+		-obj:Service
 	}
 	
 	

@@ -12,50 +12,50 @@ classDiagram
 	Soundcard <-- Facade:uses
 	
 	class Device {
-		+void on()
-		+void off()
-		+void volume_up()
-		+void volume_down()
-		+int get_volume()
-		#int volume
-		#bool state
+		+on():void
+		+off():void
+		+volume_up():void
+		+volume_down():void
+		+get_volume():int
+		#volume:int
+		#state:bool
 	}
 	
 	class Speaker {
-		+bool are_connected()
-		+void disconnect()
-		+void connect()
-		+string to_string()
-		-bool connected
+		+are_connected():bool
+		+disconnect():void
+		+connect():void
+		+to_string():string
+		-connected:bool
 	}
 	
 	class Soundcard {
-		-int channels
+		-channels:int
 	}
 	
 	class Amplifier {
-		+string get_options(vector:Options& opts)
-		+string get_opt(Options opt)
-		-vector:Options options
-		-map:Options,string options_map
+		+get_options(opts:vector(Options)):string
+		+get_opt(opt:Options):string
+		-options:vector(Options)
+		-options_map:map(Options,string)
 	}
 	
 	class Facade {
-		+void turn_on()
-		+void turn_off()
-		-Amplifier amp
-		-Speaker speakers
-		-Soundcard soundcard
-		-vector:Options default_options
-		-void build_system()
-		-void power_up_devices()
-		-void power_off_devices()
-		-void turn_up_soundcard(int n)
-		-void turn_up_amp(int n)
-		-void turn_down_soundcard()
-		-void turn_down_amp()
-		-string system_status()
-		-void display_current_status()
+		+turn_on():void
+		+turn_off():void
+		-amp:Amplifier
+		-speakers:Speaker
+		-soundcard:Soundcard
+		-default_options:vector(Options)
+		-build_system():void
+		-power_up_devices():void
+		-power_off_devices():void
+		-turn_up_soundcard(n:int):void
+		-turn_up_amp(n:int):void
+		-turn_down_soundcard():void
+		-turn_down_amp():void
+		-system_status():string
+		-display_current_status():void
 	}
 	
 ```

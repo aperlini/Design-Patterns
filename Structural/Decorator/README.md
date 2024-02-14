@@ -11,26 +11,28 @@ classDiagram
 	SandwichDecorator <|-- PastramiDecorator:extends
 	
 	class Decorator {
-		+void make()
+		<<interface>>
+		+make():void
 	}
 	
 	class Sandwich {
-		+void make()
+		+make():void
 	}
 	
 	class SandwichDecorator {
-		+void make()
-		#Sandwich *sandwich
+		<<abstract>>
+		+make():void
+		#sandwich:Sandwich
 	}
 	
 	class CheeseDecorator {
-		+void make()
-		+void add_cheese()
+		+make():void
+		+add_cheese():void
 	}
 	
 	class PastramiDecorator {
-		+void make()
-		+void add_pastrami()
+		+make():void
+		+add_pastrami():void
 	}
 	
 	
