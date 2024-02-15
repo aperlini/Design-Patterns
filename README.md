@@ -58,7 +58,7 @@ Most of the code is inspired or adapted from existing examples available on :
 
 - [x] C++ implementations
 - [ ] Java implementations
-- [ ] UML schemas
+- [x] UML schemas[^4]
 
 ---
 
@@ -66,7 +66,7 @@ Most of the code is inspired or adapted from existing examples available on :
 [^2]: https://en.wikipedia.org/wiki/Design_Patterns
 [^3]: https://www.goodreads.com/en/book/show/56083609
 
-
+[^4]: https://mermaid.js.org/syntax/classDiagram.html
 
 
 
