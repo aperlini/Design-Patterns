@@ -9,14 +9,14 @@ classDiagram
 
 	class Teacher {
           +add(t:Teacher):void
-          +addAll(reportees:vector(Teacher)):void
+          +addAll(reportees:vector~Teacher~):void
           +remove(t:Teacher):void
-          +get_reportees():vector(Teacher)
+          +get_reportees():vector~Teacher~
           +print_infos():void
           +print_reportees():void
           -name:string
           -salary:int
-          -reportees:vector(Teacher)
+          -reportees:vector~Teacher~
       }
 ```
 

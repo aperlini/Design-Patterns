@@ -34,10 +34,10 @@ classDiagram
 	}
 	
 	class Amplifier {
-		+get_options(opts:vector(Options)):string
+		+get_options(opts:vector~Options~):string
 		+get_opt(opt:Options):string
 		-options:vector(Options)
-		-options_map:map(Options,string)
+		-options_map:map~Options/string~
 	}
 	
 	class Facade {
@@ -46,7 +46,7 @@ classDiagram
 		-amp:Amplifier
 		-speakers:Speaker
 		-soundcard:Soundcard
-		-default_options:vector(Options)
+		-default_options:vector~Options~
 		-build_system():void
 		-power_up_devices():void
 		-power_off_devices():void

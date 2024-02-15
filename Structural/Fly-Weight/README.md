@@ -27,7 +27,7 @@ classDiagram
 	
 	class ShapeFactory {
 		+static get_circle(c:Color):Shape
-		-static circle_map:map(Color,Circle)
+		-static circle_map:map~Color/Circle~
 	}
 	
 ```
